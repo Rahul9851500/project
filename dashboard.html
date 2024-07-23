@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dash.css">
+</head>
+<body>
+    <div class="dashboard">
+        <nav class="sidebar">
+            <h2>Dashboard</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="http://localhost/project/form.html" onclick="logout()">Log-out</a></li>
+            </ul>
+        </nav>
+        <div class="main-content">
+            <header>
+                <h1>Welcome, User</h1>
+            </header>
+            <section class="cards">
+                <div class="card">
+                    <h3>Card 1</h3>
+                    <p>Some information</p>
+                </div>
+                <div class="card">
+                    <h3>Card 2</h3>
+                    <p>Some information</p>
+                </div>
+                <div class="card">
+                    <h3>Card 3</h3>
+                    <p>Some information</p>
+                </div>
+            </section>
+            <section class="upload-section">
+                <h2>Upload Image</h2>
+                <input type="file" id="fileInput">
+                <button onclick="uploadImage()">Upload</button>
+                <img id="uploadedImage" src="#" alt="Uploaded Image" style="display:none;">
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            window.location.href = 'login.html';
+        }
+
+        function uploadImage() {
+            const fileInput = document.getElementById('fileInput');
+            const uploadedImage = document.getElementById('uploadedImage');
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    uploadedImage.src = e.target.result;
+                    uploadedImage.style.display = 'block';
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
+    </script>
+</body>
+</html>

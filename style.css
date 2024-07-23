@@ -1,0 +1,160 @@
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+   background-color: white;
+    margin: 0;
+    padding: 0; 
+}
+
+header {
+    background-color: rgba(179, 16, 16, 0.8); 
+    padding: 20px 0; 
+    position: fixed; 
+    width: 100%;
+    top: 0;
+    z-index: 1000; 
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.logo {
+    height: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display flex for better alignment */
+}
+
+nav ul li {
+    position: relative;
+    margin-left: 20px; /* Add some space between the items */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(7, 7, 105);
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background on hover */
+    border-radius: 5px;
+    color: rgb(138, 27, 27);
+}
+
+/* Dropdown menu styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    flex-direction: column;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background on hover */
+    border-radius: 0;
+    color: rgb(138, 27, 27);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked + .menu-icon + nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .logo {
+        margin-bottom: 10px; /* Add some bottom margin */
+    }
+
+    .menu-icon {
+        display: flex; /* Display the hamburger menu icon */
+    }
+
+    nav {
+        width: 100%; /* Full width for the nav */
+    }
+
+    nav ul {
+        display: none; /* Hide the menu initially */
+        width: 100%;
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    nav ul li {
+        width: 100%; /* Full width for the menu items */
+        text-align: center; /* Center the text */
+        margin: 10px 0; /* Add some margin for spacing */
+    }
+
+    nav ul li a {
+        display: block; /* Block display for the links */
+        width: 100%; /* Full width for the links */
+    }
+
+    nav ul li .dropdown-content {
+        position: relative; /* Make the dropdown content relative */
+        width: 100%;
+    }
+}
+.carousel-item h1{
+    text-align: left;
+    font-weight: bold;
+    padding-bottom: 1px;
+    font-style: oblique;
+}
+.carousel-item p{
+    padding-bottom: 100px;
+    font-style: unset;
+}
